@@ -28,12 +28,12 @@ class MainActivity2 : AppCompatActivity() {
         googleSignInClient= GoogleSignIn.getClient(this,googleSignInOptions)
 
 
-        val GoogleAccount= GoogleSignIn.getLastSignedInAccount(this)
-        if(GoogleAccount!=null){
-            binding.name.text=GoogleAccount.displayName
-            binding.email.text=GoogleAccount.email
-            GoogleAccount.photoUrl
-            Glide.with(this).load(GoogleAccount.photoUrl.toString()).into(binding.imageView)
+        val googleAccount= GoogleSignIn.getLastSignedInAccount(this)
+        if(googleAccount!=null){
+            binding.name.text=googleAccount.displayName
+            binding.email.text=googleAccount.email
+            googleAccount.photoUrl
+            Glide.with(this).load(googleAccount.photoUrl.toString()).into(binding.imageView)
         }
 
         binding.signout.setOnClickListener {
